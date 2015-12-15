@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SelectionAnimation" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cG0-9g-2sT" userLabel="SelectionView">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="zyX-FT-c6b"/>
+                                </constraints>
+                                <connections>
+                                    <segue destination="Thz-NZ-mqI" kind="embed" identifier="selectionSegue" id="gJH-yK-pQG"/>
+                                </connections>
+                            </containerView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Anger" translatesAutoresizingMaskIntoConstraints="NO" id="2GG-uG-Atr" userLabel="mainImage">
+                                <rect key="frame" x="20" y="40" width="280" height="280"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="2GG-uG-Atr" secondAttribute="height" id="lia-Mk-4XY"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Press and hold the image to change it" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W9K-WK-TbY">
+                                <rect key="frame" x="16" y="340" width="288" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="W9K-WK-TbY" firstAttribute="top" secondItem="2GG-uG-Atr" secondAttribute="bottom" constant="20" id="7Wi-gk-f4w"/>
+                            <constraint firstItem="cG0-9g-2sT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="JdB-j2-acn"/>
+                            <constraint firstItem="cG0-9g-2sT" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-20" id="KWL-oy-WvE"/>
+                            <constraint firstItem="2GG-uG-Atr" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="7:8" id="Pgy-VB-0Li"/>
+                            <constraint firstItem="W9K-WK-TbY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="XwK-u5-Wmi"/>
+                            <constraint firstItem="2GG-uG-Atr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="adm-Os-YRE"/>
+                            <constraint firstItem="2GG-uG-Atr" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="gQC-2g-kvL"/>
+                            <constraint firstItem="cG0-9g-2sT" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="zSg-bA-8jT"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="SelectionViewTopContraint" destination="KWL-oy-WvE" id="ZaC-tz-4ij"/>
+                        <outlet property="mainImage" destination="2GG-uG-Atr" id="bs2-Bm-ZKC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="304.5" y="429.5"/>
+        </scene>
+        <!--Selection View Controller-->
+        <scene sceneID="kY1-ck-2CI">
+            <objects>
+                <viewController id="Thz-NZ-mqI" customClass="selectionViewController" customModule="SelectionAnimation" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="nfB-2U-uNy"/>
+                        <viewControllerLayoutGuide type="bottom" id="vsI-3L-qBO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="nKE-oE-vYh">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Disgust" translatesAutoresizingMaskIntoConstraints="NO" id="iRq-R1-BA1" userLabel="img1">
+                                <rect key="frame" x="2" y="13" width="75" height="75"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="BKB-u9-Qdg"/>
+                                    <constraint firstAttribute="width" secondItem="iRq-R1-BA1" secondAttribute="height" id="ky1-Vz-HBh"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Fear" translatesAutoresizingMaskIntoConstraints="NO" id="wvj-Pl-xoA" userLabel="img2">
+                                <rect key="frame" x="83" y="13" width="75" height="75"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="4h2-3i-qBh"/>
+                                    <constraint firstAttribute="width" secondItem="wvj-Pl-xoA" secondAttribute="height" id="h2g-7t-Kud"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Joy" translatesAutoresizingMaskIntoConstraints="NO" id="7vd-7y-aX6" userLabel="img3">
+                                <rect key="frame" x="163" y="13" width="75" height="75"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="7vd-7y-aX6" secondAttribute="height" id="4VA-Px-yd2"/>
+                                    <constraint firstAttribute="height" constant="75" id="sTc-zg-Ik8"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Sadness" translatesAutoresizingMaskIntoConstraints="NO" id="JER-vL-4pm" userLabel="img4">
+                                <rect key="frame" x="243" y="13" width="75" height="75"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="JER-vL-4pm" secondAttribute="height" id="NsQ-iT-nAH"/>
+                                    <constraint firstAttribute="height" constant="75" id="y4C-Cv-DUS"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="7vd-7y-aX6" firstAttribute="centerX" secondItem="nKE-oE-vYh" secondAttribute="centerX" multiplier="5:4" id="2eg-cn-LZT"/>
+                            <constraint firstItem="JER-vL-4pm" firstAttribute="centerX" secondItem="nKE-oE-vYh" secondAttribute="centerX" multiplier="7:4" id="3vf-m2-ocv"/>
+                            <constraint firstItem="JER-vL-4pm" firstAttribute="centerY" secondItem="nKE-oE-vYh" secondAttribute="centerY" id="Grv-pU-oWe"/>
+                            <constraint firstItem="iRq-R1-BA1" firstAttribute="centerY" secondItem="nKE-oE-vYh" secondAttribute="centerY" id="QsU-I3-SVB"/>
+                            <constraint firstItem="iRq-R1-BA1" firstAttribute="centerX" secondItem="nKE-oE-vYh" secondAttribute="centerX" multiplier="1:4" id="hjJ-5z-GOB"/>
+                            <constraint firstItem="7vd-7y-aX6" firstAttribute="centerY" secondItem="nKE-oE-vYh" secondAttribute="centerY" id="jKi-jH-tBA"/>
+                            <constraint firstItem="wvj-Pl-xoA" firstAttribute="centerY" secondItem="nKE-oE-vYh" secondAttribute="centerY" id="sTj-jj-zjx"/>
+                            <constraint firstItem="wvj-Pl-xoA" firstAttribute="centerX" secondItem="nKE-oE-vYh" secondAttribute="centerX" multiplier="3:4" id="y84-lF-CcU"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="img1" destination="iRq-R1-BA1" id="X3R-B4-u7Q"/>
+                        <outlet property="img2" destination="wvj-Pl-xoA" id="jSF-SS-r3f"/>
+                        <outlet property="img3" destination="7vd-7y-aX6" id="1oQ-aE-ChO"/>
+                        <outlet property="img4" destination="JER-vL-4pm" id="U60-az-oub"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HCy-Yw-OIV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Anger" width="209" height="210"/>
+        <image name="Disgust" width="211" height="208"/>
+        <image name="Fear" width="209" height="209"/>
+        <image name="Joy" width="210" height="210"/>
+        <image name="Sadness" width="213" height="209"/>
+    </resources>
+</document>
